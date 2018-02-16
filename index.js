@@ -842,7 +842,7 @@ DailyRotateFile.prototype._cleanOldFiles = function () {
         return;
       }
 
-      var fileNameReg = new RegExp(self._basename, 'g');
+      var fileNameReg = new RegExp(self._basename);
       files.forEach(function (file) {
         if (/.log/.test(file) && fileNameReg.test(file)) {
           tryToRemoveLogFile(file);
